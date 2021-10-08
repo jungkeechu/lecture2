@@ -1,4 +1,44 @@
-int [] bricks = new int [10 ];
+int [] bricks = new int [10];
+
+void setup() {
+  int i;
+  
+  size(500, 400);
+
+  i = 0;
+  while(i<10){
+      bricks[i] = 1;
+      i++;
+  }
+}
+
+void draw()
+{
+  int i;
+  
+  background(0);
+  
+  i = 0;
+  while(i < 10){
+    if ( bricks[i] == 1) fill(255);
+    else fill(0);
+    
+    rect(i*50, 0, 50, 20); 
+    i++;
+  }
+ 
+  if ( mousePressed  )
+  {
+      if ( bricks[mouseX/50] == 1 )
+      {
+          bricks[mouseX/50] = 0; 
+      }
+   }
+}
+
+// for statement
+/*
+int [] bricks = new int [10];
 
 void setup() 
 {
@@ -30,7 +70,8 @@ void draw()
   {
       if ( bricks[mouseX/50] == 1 )
       {
-          bricks[mouseX/50] = 0;
+          bricks[mouseX/50] = 0; 
       }
    }
 }
+*/
